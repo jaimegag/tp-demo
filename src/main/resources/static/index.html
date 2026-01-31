@@ -20,6 +20,54 @@
                 <button @click="fetchHello" class="refresh-btn">Refresh</button>
             </div>
         </main>
+        <section class="cfenv-section">
+            <div class="cfenv-container">
+                <div class="cfenv-card">
+                    <h2>Application Info</h2>
+                    <div v-if="cfenvLoading" class="loading">Loading...</div>
+                    <div v-else-if="cfenvError" class="error">{{ cfenvError }}</div>
+                    <div v-else-if="cfenvInfo" class="info-list">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value">{{ cfenvInfo.applicationName || 'N/A' }}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">App ID:</span>
+                            <span class="info-value">{{ cfenvInfo.applicationId || 'N/A' }}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Instance:</span>
+                            <span class="info-value">{{ cfenvInfo.instanceIndex || 'N/A' }}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Space:</span>
+                            <span class="info-value">{{ cfenvInfo.spaceName || 'N/A' }}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">URIs:</span>
+                            <span class="info-value">{{ cfenvInfo.uris ? cfenvInfo.uris.join(', ') : 'N/A' }}</span>
+                        </div>
+                    </div>
+                    <div v-else class="info-empty">Not running on Cloud Foundry</div>
+                </div>
+                <div class="cfenv-card">
+                    <h2>Bound Services</h2>
+                    <div v-if="cfenvLoading" class="loading">Loading...</div>
+                    <div v-else-if="cfenvError" class="error">{{ cfenvError }}</div>
+                    <div v-else-if="cfenvInfo && cfenvInfo.services && cfenvInfo.services.length > 0" class="services-list">
+                        <div v-for="service in cfenvInfo.services" :key="service.name" class="service-item">
+                            <div class="service-name">{{ service.name }}</div>
+                            <div class="service-details">
+                                <span class="service-label">{{ service.label }}</span>
+                                <span class="service-plan">{{ service.plan }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-else class="info-empty">No services bound</div>
+                </div>
+            </div>
+            <button @click="fetchCfEnv" class="refresh-btn cfenv-refresh">Refresh CF Environment</button>
+        </section>
     </div>
     <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="js/app.js"></script>
