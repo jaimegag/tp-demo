@@ -19,6 +19,22 @@
                 <div v-else class="response-text">{{ message }}</div>
                 <button @click="fetchHello" class="refresh-btn">Refresh</button>
             </div>
+            <div class="response-card version-card">
+                <h2>Runtime Info</h2>
+                <div v-if="actuatorLoading" class="loading">Loading...</div>
+                <div v-else-if="actuatorError" class="error">{{ actuatorError }}</div>
+                <div v-else-if="actuatorInfo" class="info-list">
+                    <div class="info-item">
+                        <span class="info-label">Spring Boot:</span>
+                        <span class="info-value">{{ actuatorInfo.app?.['spring-boot']?.version || 'N/A' }}</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Java:</span>
+                        <span class="info-value">{{ actuatorInfo.java?.version || 'N/A' }} ({{ actuatorInfo.java?.vendor?.name || 'N/A' }})</span>
+                    </div>
+                </div>
+                <div v-else class="info-empty">No info available</div>
+            </div>
         </main>
         <section class="cfenv-section">
             <div class="cfenv-container">

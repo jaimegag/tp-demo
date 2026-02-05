@@ -30,7 +30,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    gap: 1.5rem;
+    flex-wrap: wrap;
     padding: 3rem 1rem;
+}
+
+.version-card {
+    text-align: left;
+}
+
+.version-card .info-list {
+    text-align: left;
+}
+
+.version-card .info-label {
+    min-width: 100px;
 }
 
 .response-card {
