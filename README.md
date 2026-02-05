@@ -9,12 +9,12 @@ A Spring Boot application with a Vue.js frontend, designed to run on Cloud Found
 
 ## Tech Stack
 
-- Spring Boot 2.7.8
+- Spring Boot
 - Spring MVC
 - Spring Actuator
 - Log4j2
 - Vue 3 (CDN)
-- java-cfenv 2.5.0
+- java-cfenv
 
 ## Project Structure
 
