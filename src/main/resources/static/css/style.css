@@ -20,6 +20,18 @@ body {
     box-shadow: 0 2px 8px rgba(13, 71, 161, 0.3);
 }
 
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.banner-logo {
+    height: 1.75rem;
+    width: auto;
+}
+
 .banner h1 {
     font-size: 1.75rem;
     font-weight: 700;
