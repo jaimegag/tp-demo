@@ -9,10 +9,10 @@
         </File>
     </Appenders>
     <Loggers>
-        <AsyncLogger name="com.example.tpdemo" level="INFO"/>
-        <AsyncRoot level="INFO">
+        <Logger name="com.example.tpdemo" level="INFO"/>
+        <Root level="INFO">
             <AppenderRef ref="Console"/>
             <AppenderRef ref="File"/>
-        </AsyncRoot>
+        </Root>
     </Loggers>
 </Configuration>
