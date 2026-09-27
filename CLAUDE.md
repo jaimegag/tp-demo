@@ -9,6 +9,7 @@
 ## Tech Stack
 
 - Spring Boot 2.7.x (Java 11 required)
+- Custom parent POM in `parent/pom.xml` (not `spring-boot-starter-parent`); it imports the `spring-boot-dependencies` BOM and defines the Boot version (`spring-boot.version`) and plugin defaults
 - Log4j2 for logging (not SLF4J)
 - Vue 3 via CDN (no build step for frontend)
 - java-cfenv for Cloud Foundry environment access
