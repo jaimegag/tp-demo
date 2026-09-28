@@ -37,7 +37,10 @@ src/main/
 
 ## Running the Application
 
+The app's parent POM (`com.example:tp-demo-standalone-parent`) lives in its own repository, checked out alongside this one as `../tp-demo-parent`. It is resolved from the Maven repository rather than via `relativePath`, so install it once before building the app:
+
 ```bash
+mvn -f ../tp-demo-parent/pom.xml install
 mvn spring-boot:run
 ```
 
