@@ -2,6 +2,7 @@
 
 ## Build & Run
 
+- Install parent POM first: `mvn -f external-parent/pom.xml install`
 - Build: `mvn clean package -DskipTests`
 - Run: `mvn spring-boot:run`
 - Test: `mvn test`
@@ -9,6 +10,7 @@
 ## Tech Stack
 
 - Spring Boot 2.7.x (Java 11 required)
+- Standalone parent POM in `external-parent/` (`com.example:tp-demo-external-parent`), which extends `spring-boot-starter-parent`; the app references it by coordinates only (empty `relativePath`). `spring-boot-starter-actuator` is inherited from this parent, not declared in the app POM
 - Log4j2 for logging (not SLF4J)
 - Vue 3 via CDN (no build step for frontend)
 - java-cfenv for Cloud Foundry environment access
