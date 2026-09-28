@@ -12,7 +12,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.8</version>
+        <version>2.7.10</version>
         <relativePath/>
     </parent>
 
@@ -26,7 +26,7 @@
     <properties>
         <java.version>11</java.version>
         <!-- Keep in sync with the spring-boot-starter-parent version above -->
-        <spring-boot.version>2.7.8</spring-boot.version>
+        <spring-boot.version>2.7.10</spring-boot.version>
     </properties>
 
     <!-- Inherited by every child project -->
